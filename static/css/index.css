@@ -1,0 +1,406 @@
+.traffic-menu-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.traffic-menu {
+  width: 220px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.traffic-menu-title {
+  background: #2c5282;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.traffic-menu-title:hover {
+  background: #1a365d;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.traffic-menu-dropdown {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  z-index: 100;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.traffic-menu:hover .traffic-menu-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  max-height: 400px;
+}
+
+.traffic-menu-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #edf2f7;
+  transition: all 0.2s ease;
+  color: #4a5568;
+}
+
+.traffic-menu-item:last-child {
+  border-bottom: none;
+}
+
+.traffic-menu-item:hover {
+  background: #ebf8ff;
+  color: #2b6cb0;
+  padding-left: 20px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e6fffa 100%);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2b6cb0;
+  margin: 10px 0;
+}
+
+.traffic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.law-card-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.law-card {
+  width: 90%;
+  max-width: 1000px;
+  height: 500px;
+  display: flex;
+  overflow: hidden;
+  border: 8px solid;
+  border-image: linear-gradient(-50deg, #1a365d, #2c5282, #4299e1, #90cdf4) 1;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease-in-out;
+  position: relative;
+}
+
+.law-overlay {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #1a365d, #2c5282);
+  transition: 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.law-overlay-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  height: 100%;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.law-overlay-content h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.law-overlay-content p {
+  color: #cbd5e0;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+
+.law-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  padding: 3rem;
+  background: white;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: 0.5s ease-in-out;
+  color: black;
+}
+
+.law-text h2 {
+  color: #2c5282;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.law-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.law-card:hover .law-overlay {
+  transform: translateX(-60%);
+}
+
+.law-card:hover .law-image-content {
+  width: 40%;
+}
+
+.law-card:hover .law-text {
+  transform: translateX(0);
+}
+
+/* Animations */
+.animate {
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-fill-mode: backwards;
+}
+
+.pop {
+  animation-name: pop;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.slide-left {
+  animation-name: slide-left;
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.6s;
+}
+
+.delay-3 {
+  animation-delay: 0.9s;
+}
+
+.delay-4 {
+  animation-delay: 1.2s;
+}
+/* Special Signs Section */
+.special-signs {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  border-radius: 2rem;
+  margin: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.special-signs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232c5282' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.2;
+}
+
+.sign-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: white;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sign-section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  color: #cbd5e0;
+  position: relative;
+  z-index: 2;
+}
+
+.signs-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.sign-card {
+  width: 310px;
+  height: 450px;
+  perspective: 1500px;
+}
+
+.sign-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.sign-card:hover .sign-card-inner {
+  transform: rotateY(180deg);
+}
+
+.sign-card-front,
+.sign-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.sign-card-front {
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.sign-card-front .icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sign-card-front h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sign-card-front p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.sign-card-back {
+  background: white;
+  transform: rotateY(180deg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-card-back h3 {
+  font-size: 1.5rem;
+  color: #2c5282;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sign-card-back img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sign-card-back p {
+  color: #4a5568;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.hover-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,103 @@
+.detection-box {
+  position: absolute;
+  border: 2px solid #3b82f6;
+  background-color: rgba(59, 130, 246, 0.2);
+}
+.detection-label {
+  position: absolute;
+  background-color: #3b82f6;
+  color: white;
+  padding: 2px 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+#videoContainer {
+  position: relative;
+  padding-top: 1.25%; 
+  width: 500px;
+  height: 500px;
+}
+#videoFeed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#canvasOutput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#title{text-align: center; text-transform: uppercase; font-size: 40px;}
+#ctn_btn{text-align: center;}
+#videoContainer {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+#cameraPlaceholder {
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: all 0.5s ease;
+}
+
+.detection-box {
+    border: 3px solid #3b82f6;
+    background-color: rgba(59, 130, 246, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.detection-label {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    backdrop-filter: blur(2px);
+}
+
+#detectionsLog {
+    scrollbar-width: thin;
+    scrollbar-color: #3b82f6 #f1f1f1;
+}
+
+#detectionsLog::-webkit-scrollbar {
+    width: 8px;
+}
+
+#detectionsLog::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#detectionsLog::-webkit-scrollbar-thumb {
+    background-color: #3b82f6;
+    border-radius: 10px;
+}
+
+/* Animation cho detection log */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.detection-item {
+    animation: fadeIn 0.3s ease-out;
+    margin-bottom: 8px;
+    border-left: 4px solid #3b82f6;
+}
+

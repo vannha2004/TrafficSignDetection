@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Traffic Sign Detection - Realtime{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/realtime.css') }}">
+<script src="{{ url_for('static', filename='js/realtime.js') }}" defer></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block content %}
+
+<div class="flex flex-col min-h-screen"> <!-- Wrapper giống history.html -->
+    <main class="flex-grow container mx-auto px-4 py-10"> <!-- flex-grow để đẩy footer xuống -->
+        <section class="relative rounded-xl overflow-hidden shadow-lg p-8 bg-cover bg-center"
+            style="background-image: url({{ url_for('static', filename='images/back_2.jpeg') }});">
+            <div class="absolute inset-0 bg-black/40"></div> <!-- overlay tối -->
+            <div class="relative z-10">
+                <h2 id="title" class="text-3xl font-extrabold mb-6">Realtime Traffic Sign Detection</h2>
+                <!-- Larger, bolder title -->
+                <div id="ctn_btn" class="mb-6 flex justify-center space-x-4"> <!-- Centered buttons with space -->
+                    <button id="startBtn"
+                        class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition duration-300 shadow-lg">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <i class="fas fa-play-circle mr-2"></i> Start Camera
+                    </button>
+                    <button id="stopBtn"
+                        class="bg-red-600 text-white px-6 py-3 rounded-xl hover:bg-red-700 transition duration-300 shadow-lg">
+                        <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                        <i class="fas fa-stop-circle mr-2"></i> Stop Camera
+                    </button>
+                </div>
+                <div id="videoContainer"
+                    class="relative w-full max-w-3xl mx-auto aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-xl">
+                    <img id="cameraPlaceholder" src="{{ url_for('static', filename='images/back_1.png') }}"
+                        alt="Camera Placeholder"
+                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500">
+                    <img id="videoFeed" alt="Video Feed" class="absolute inset-0 w-full h-full object-cover">
+                    <canvas id="canvasOutput" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Recent Detections</h3>
+                    <div id="detectionsLog"
+                        class="p-5 bg-blue-50 rounded-xl border border-blue-200 shadow-inner max-h-60 overflow-y-auto">
+                        <p class="text-gray-500 italic text-center">No detections yet. Start the camera to see real-time results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+{% endblock %}

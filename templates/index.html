@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+{% block title %}Traffic Sign Detection{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto">
+    <!----------------------------- Hero Section ----------------------------->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl shadow-xl p-8 text-white mb-12">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-2/3 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Traffic Sign Recognition System</h1>
+                <p class="text-xl mb-6 opacity-90">An AI-powered solution to enhance road safety in Vietnam</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="{{ url_for('realtime') }}"
+                        class="bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition duration-300 shadow-lg font-semibold flex items-center">
+                        <i class="fas fa-video mr-2"></i> Realtime Detection
+                    </a>
+                    <a href="{{ url_for('image_upload') }}"
+                        class="bg-blue-800 text-white px-6 py-3 rounded-lg hover:bg-blue-900 transition duration-300 shadow-lg font-semibold flex items-center">
+                        <i class="fas fa-image mr-2"></i> Upload Image
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/3 flex justify-center">
+                <div class="bg-white/20 p-6 rounded-2xl backdrop-blur-sm">
+                    <i class="fas fa-traffic-light text-6xl opacity-80"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!----------------------------- Traffic Info Dropdowns ----------------------------->
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+        <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Vietnam Road Safety Information</h2>
+
+        <div class="traffic-menu-container">
+            <div class="traffic-menu">
+                <div class="traffic-menu-title">Accident Statistics</div>
+                <div class="traffic-menu-dropdown">
+                    <div class="traffic-menu-item">6.700 accidents/year</div>
+                    <div class="traffic-menu-item">11.000 fatalities</div>
+                    <div class="traffic-menu-item">60% due to speeding</div>
+                    <div class="traffic-menu-item">25% due to running red lights</div>
+                    <div class="traffic-menu-item">15% due to alcohol use</div>
+                </div>
+            </div>
+
+            <div class="traffic-menu">
+                <div class="traffic-menu-title">Biển Báo Phổ Biến</div>
+                <div class="traffic-menu-dropdown">
+                    <div class="traffic-menu-item">Biển cấm dừng, đỗ</div>
+                    <div class="traffic-menu-item">Biển tốc độ tối đa</div>
+                    <div class="traffic-menu-item">Biển đường ưu tiên</div>
+                    <div class="traffic-menu-item">Biển nguy hiểm</div>
+                    <div class="traffic-menu-item">Biển chỉ dẫn</div>
+                </div>
+            </div>
+
+            <div class="traffic-menu">
+                <div class="traffic-menu-title">Quy Định Mới</div>
+                <div class="traffic-menu-dropdown">
+                    <div class="traffic-menu-item">Đ10 Luật TTATGT 2025</div>
+                    <div class="traffic-menu-item">Xử phạt nồng độ cồn</div>
+                    <div class="traffic-menu-item">Quy định đội mũ bảo hiểm</div>
+                    <div class="traffic-menu-item">Quy định tốc độ tối đa</div>
+                    <div class="traffic-menu-item">Quy định về xe điện</div>
+                </div>
+            </div>
+
+            <div class="traffic-menu">
+                <div class="traffic-menu-title">Giải Pháp</div>
+                <div class="traffic-menu-dropdown">
+                    <div class="traffic-menu-item">Hệ thống camera giám sát</div>
+                    <div class="traffic-menu-item">Ứng dụng công nghệ AI</div>
+                    <div class="traffic-menu-item">Nâng cao ý thức người dân</div>
+                    <div class="traffic-menu-item">Cải thiện hạ tầng giao thông</div>
+                    <div class="traffic-menu-item">Đào tạo lái xe chuyên nghiệp</div>
+                </div>
+            </div>
+        </div>
+
+        <!------------------------------ Stats Section ----------------------------->
+        <div class="traffic-grid">
+            <div class="stat-card">
+                <div class="text-lg font-semibold text-gray-600">Tỷ lệ tuân thủ</div>
+                <div class="stat-value">78%</div>
+                <div class="text-gray-500">Người dân tuân thủ biển báo</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="text-lg font-semibold text-gray-600">Giảm tai nạn</div>
+                <div class="stat-value">-15%</div>
+                <div class="text-gray-500">Sau khi triển khai hệ thống AI</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="text-lg font-semibold text-gray-600">Biển báo mới</div>
+                <div class="stat-value">42+</div>
+                <div class="text-gray-500">Được bổ sung từ 2020</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-white rounded-2xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Tính Năng Nổi Bật</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 transition-all hover:border-blue-400">
+                <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-bolt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2" style="color: black;">Nhận Diện Thời Gian Thực</h3>
+                <p class="text-gray-600">Phát hiện biển báo ngay lập tức qua camera với độ chính xác cao</p>
+            </div>
+
+            <div class="bg-green-50 p-6 rounded-xl border border-green-200 transition-all hover:border-green-400">
+                <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-image text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2" style="color: black;">Phân Tích Hình Ảnh</h3>
+                <p class="text-gray-600">Tải ảnh lên và nhận kết quả phân tích chi tiết trong vài giây</p>
+            </div>
+
+            <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 transition-all hover:border-purple-400">
+                <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-history text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2" style="color: black;">Lịch Sử Phát Hiện</h3>
+                <p class="text-gray-600">Lưu trữ và xem lại các phát hiện trước đó một cách dễ dàng</p>
+            </div>
+        </div>
+    </section>
+    <section class="law-card-container">
+        <div class="law-card">
+            <div class="law-overlay">
+                <div class="law-overlay-content">
+                    <h1 class="animate pop delay-1">Luật Giao Thông Đường Bộ</h1>
+                    <p class="animate pop delay-2">Nghị định số 168/2024/NĐ-CP</p>
+                    <div class="animate pop delay-3">
+                        <p>Quy định xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ và đường sắt</p>
+                    </div>
+                </div>
+                <div class="law-image-content" style="position: absolute; top: 0; right: 0; width: 60%; height: 100%;
+            background-image: url('{{ url_for('static', filename='images/168.jpg') }}');
+            background-size: cover; background-position: center;
+            transition: 0.3s ease-in-out;">
+                </div>
+
+            </div>
+            <div class="law-text">
+                <h2>Nội Dung Chính</h2>
+                <p>Nghị định 168/2024/NĐ-CP quy định về xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ và
+                    đường sắt, có hiệu lực từ ngày 01/01/2025.</p>
+
+                <p><strong>Các quy định nổi bật:</strong></p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li>Xử phạt nồng độ cồn: Mức phạt cao nhất lên đến 40 triệu đồng và tước GPLX đến 24 tháng</li>
+                    <li>Quy định về tốc độ: Phạt từ 800.000 - 12 triệu đồng tùy mức độ vượt quá tốc độ</li>
+                    <li>Vượt đèn đỏ: Phạt từ 3 - 6 triệu đồng, tước GPLX 1-3 tháng</li>
+                    <li>Không đội mũ bảo hiểm: Phạt từ 400.000 - 600.000 đồng</li>
+                    <li>Sử dụng điện thoại khi lái xe: Phạt từ 800.000 - 1 triệu đồng</li>
+                </ul>
+
+                <p><strong>Biện pháp tăng cường an toàn:</strong></p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li>Lắp đặt hệ thống camera giám sát trên các tuyến đường</li>
+                    <li>Tăng cường tuần tra kiểm soát của cảnh sát giao thông</li>
+                    <li>Ứng dụng công nghệ hiện đại trong quản lý giao thông</li>
+                    <li>Nâng cao ý thức chấp hành luật giao thông</li>
+                </ul>
+
+                <p>Luật này đã góp phần giảm 10% số vụ tai nạn giao thông và 15% số người tử vong sau 1 năm thực hiện.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="special-signs">
+        <h2 class="sign-section-title">Biển Báo Giao Thông Đặc Biệt</h2>
+        <p class="sign-section-subtitle">Khám phá các biển báo quan trọng trong hệ thống giao thông Việt Nam tieu bieu</p>
+
+        <div class="signs-container">
+            <!-- Biển báo cấm -->
+            <div class="sign-card">
+                <div class="sign-card-inner">
+                    <div class="sign-card-front">
+                        <div class="icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h3>Biển Báo Cấm</h3>
+                        <p>Biển báo thể hiện các điều cấm mà người tham gia giao thông không được vi phạm</p>
+                        <div class="hover-hint">Di chuột để xem chi tiết</div>
+                    </div>
+                    <div class="sign-card-back">
+                        <h3>Biển Báo Cấm</h3>
+                        <img src="../static/images/biencam.jpg"
+                            alt="Biển báo cấm">
+                        <p>Biển báo hình tròn, viền đỏ, nền trắng, hình vẽ màu đen. Biển báo cấm thể hiện các điều cấm
+                            mà người tham gia giao thông không được vi phạm.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biển báo nguy hiểm -->
+            <div class="sign-card">
+                <div class="sign-card-inner">
+                    <div class="sign-card-front">
+                        <div class="icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Biển Báo Nguy Hiểm</h3>
+                        <p>Biển báo cảnh báo các tình huống nguy hiểm có thể xảy ra trên đường</p>
+                        <div class="hover-hint">Di chuột để xem chi tiết</div>
+                    </div>
+                    <div class="sign-card-back">
+                        <h3>Biển Báo Nguy Hiểm</h3>
+                        <img src="../static/images/nguyhiem.jpg"
+                            alt="Biển báo nguy hiểm">
+                        <p>Biển báo hình tam giác đều, viền đỏ, nền vàng, hình vẽ màu đen. Biển báo nguy hiểm để cảnh
+                            báo các tình huống nguy hiểm có thể xảy ra.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biển báo chỉ dẫn -->
+            <div class="sign-card">
+                <div class="sign-card-inner">
+                    <div class="sign-card-front">
+                        <div class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>Biển Báo Chỉ Dẫn</h3>
+                        <p>Biển báo hướng dẫn những thông tin cần thiết cho người tham gia giao thông</p>
+                        <div class="hover-hint">Di chuột để xem chi tiết</div>
+                    </div>
+                    <div class="sign-card-back">
+                        <h3>Biển Báo Chỉ Dẫn</h3>
+                        <img src="../static/images/chidan.jpg"
+                            alt="Biển báo chỉ dẫn">
+                        <p>Biển báo hình chữ nhật hoặc hình vuông, nền xanh, hình vẽ màu trắng. Biển báo chỉ dẫn để
+                            hướng dẫn những thông tin cần thiết cho người tham gia giao thông.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

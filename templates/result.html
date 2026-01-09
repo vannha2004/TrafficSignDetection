@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Detection Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .wrap {
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+
+    .image-area {
+      position: relative;
+      display: inline-block;
+    }
+
+    #resultImage {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    #overlayCanvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+    }
+
+    .info {
+      margin-top: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      background: #0ea5a4;
+      color: #fff;
+      border-radius: 6px;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h2>Result — Model: {{ model_name }}</h2>
+
+    <div class="image-area">
+      <img id="resultImage" src="{{ original_image }}" alt="original" />
+      <canvas id="overlayCanvas"></canvas>
+    </div>
+
+    <div class="info">
+      <a href="{{ annotated_image }}" target="_blank">Open annotated image (server-drawn)</a>
+      <p>Detections: <strong id="detCount">{{ detections|length }}</strong></p>
+      <div id="detectList">
+        {% for d in detections %}
+        <div class="det">
+          <span class="badge">{{ d.class_name if d.class_name is defined else (d.label if d.label is defined else 'Obj')
+            }}</span>
+          <small>{{ ((d.confidence if d.confidence is defined else 0) * 100)|round(1) }}%</small>
+          <div>bbox: {{ d.bbox }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div style="margin-top:18px;">
+      <a href="{{ url_for('image_upload') }}">← Back</a>
+    </div>
+  </div>
+
+  <!-- Safe place to put JSON data -->
+  <script id="detections-data" type="application/json">{{ detections_json | safe }}</script>
+
+  <script>
+    (function () {
+      const img = document.getElementById('resultImage');
+      const canvas = document.getElementById('overlayCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Read JSON safely from the script tag
+      let detections = [];
+      try {
+        const el = document.getElementById('detections-data');
+        if (el && el.textContent) detections = JSON.parse(el.textContent);
+      } catch (e) {
+        console.error('Failed to parse detections JSON', e);
+        detections = [];
+      }
+
+      function resizeCanvasToImage() {
+        const w = img.clientWidth;
+        const h = img.clientHeight;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        canvas.width = w;
+        canvas.height = h;
+      }
+
+      function draw() {
+        if (!detections || detections.length === 0) return;
+        const natW = img.naturalWidth || 1;
+        const natH = img.naturalHeight || 1;
+        const dispW = img.clientWidth;
+        const dispH = img.clientHeight;
+        const scaleX = dispW / natW;
+        const scaleY = dispH / natH;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.lineWidth = Math.max(2, Math.round(Math.min(scaleX, scaleY) * 2));
+        ctx.font = '14px Arial';
+
+        detections.forEach(d => {
+          const label = d.class_name ?? d.label ?? 'Obj';
+          const conf = Number(d.confidence ?? 0);
+          const bbox = d.bbox || [0, 0, 0, 0];
+          const [x1, y1, x2, y2] = bbox.map(Number);
+
+          const sx = x1 * scaleX;
+          const sy = y1 * scaleY;
+          const sw = (x2 - x1) * scaleX;
+          const sh = (y2 - y1) * scaleY;
+
+          const color = '#3b82f6';
+          ctx.strokeStyle = color;
+          ctx.fillStyle = color;
+          ctx.globalAlpha = 1.0;
+          ctx.strokeRect(sx, sy, sw, sh);
+
+          const text = `${label} ${(conf * 100).toFixed(1)}%`;
+          const textW = ctx.measureText(text).width + 8;
+          const textH = 18;
+          const textY = Math.max(0, sy - textH - 4);
+
+          ctx.fillStyle = color;
+          ctx.fillRect(sx, textY, textW, textH);
+
+          ctx.fillStyle = '#fff';
+          ctx.fillText(text, sx + 4, textY + textH - 4);
+        });
+      }
+
+      if (img.complete) {
+        resizeCanvasToImage();
+        draw();
+      } else {
+        img.onload = () => {
+          resizeCanvasToImage();
+          draw();
+        };
+      }
+
+      window.addEventListener('resize', () => {
+        resizeCanvasToImage();
+        draw();
+      });
+    })();
+  </script>
+</body>
+
+</html>

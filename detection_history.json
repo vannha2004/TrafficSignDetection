@@ -1,0 +1,619 @@
+[
+  {
+    "type": "P-112",
+    "timestamp": "2025-08-16 22:22:57",
+    "model": "Faster R-CNN"
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 15:47:06",
+    "model": "Unknown",
+    "confidence": 0.4773384928703308
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:06",
+    "model": "Unknown",
+    "confidence": 0.41654491424560547
+  },
+  {
+    "type": "P-107a",
+    "timestamp": "2025-08-17 15:47:06",
+    "model": "Unknown",
+    "confidence": 0.32638463377952576
+  },
+  {
+    "type": "P-127",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.6838077902793884
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.5593628287315369
+  },
+  {
+    "type": "P-107a",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.25963401794433594
+  },
+  {
+    "type": "P-127",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.5616703629493713
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.4867312014102936
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.4585111439228058
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.32320109009742737
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.2903223931789398
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.33243557810783386
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.27114659547805786
+  },
+  {
+    "type": "P-106b",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.2686408758163452
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.5961365103721619
+  },
+  {
+    "type": "P-127",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.5550519824028015
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 15:47:07",
+    "model": "Unknown",
+    "confidence": 0.3092609941959381
+  },
+  {
+    "type": "P-107a",
+    "timestamp": "2025-08-17 15:47:08",
+    "model": "Unknown",
+    "confidence": 0.39339444041252136
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:08",
+    "model": "Unknown",
+    "confidence": 0.7560229301452637
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:08",
+    "model": "Unknown",
+    "confidence": 0.45631587505340576
+  },
+  {
+    "type": "P-107a",
+    "timestamp": "2025-08-17 15:47:08",
+    "model": "Unknown",
+    "confidence": 0.5329644680023193
+  },
+  {
+    "type": "P-127",
+    "timestamp": "2025-08-17 15:47:08",
+    "model": "Unknown",
+    "confidence": 0.40388330817222595
+  },
+  {
+    "type": "P-106b",
+    "timestamp": "2025-08-17 15:47:08",
+    "model": "Unknown",
+    "confidence": 0.25080007314682007
+  },
+  {
+    "type": "P-127",
+    "timestamp": "2025-08-17 15:47:08",
+    "model": "Unknown",
+    "confidence": 0.4322831332683563
+  },
+  {
+    "type": "P-127",
+    "timestamp": "2025-08-17 15:47:08",
+    "model": "Unknown",
+    "confidence": 0.3488175570964813
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 15:47:27",
+    "model": "YOLO v8",
+    "confidence": 0.940568745136261
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 15:47:27",
+    "model": "YOLO v8",
+    "confidence": 0.8676437735557556
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 15:47:27",
+    "model": "YOLO v8",
+    "confidence": 0.7299142479896545
+  },
+  {
+    "type": "P-102",
+    "timestamp": "2025-08-17 15:47:27",
+    "model": "YOLO v8",
+    "confidence": 0.5650849938392639
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 15:47:27",
+    "model": "YOLO v8",
+    "confidence": 0.40115147829055786
+  },
+  {
+    "type": "P-107a",
+    "timestamp": "2025-08-17 17:31:34",
+    "model": "Unknown",
+    "confidence": 0.2565019428730011
+  },
+  {
+    "type": "W-207a",
+    "timestamp": "2025-08-17 17:31:48",
+    "model": "YOLO v8",
+    "confidence": 0.9975679516792297
+  },
+  {
+    "type": "W-202b",
+    "timestamp": "2025-08-17 17:31:48",
+    "model": "YOLO v8",
+    "confidence": 0.9221067428588867
+  },
+  {
+    "type": "W-207a",
+    "timestamp": "2025-08-17 20:17:21",
+    "model": "YOLO v8",
+    "confidence": 0.9975679516792297
+  },
+  {
+    "type": "W-202b",
+    "timestamp": "2025-08-17 20:17:21",
+    "model": "YOLO v8",
+    "confidence": 0.9221063256263733
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:17:33",
+    "model": "YOLO v8",
+    "confidence": 0.9405688643455505
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:17:33",
+    "model": "YOLO v8",
+    "confidence": 0.8676438331604004
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 20:17:33",
+    "model": "YOLO v8",
+    "confidence": 0.7299150228500366
+  },
+  {
+    "type": "P-102",
+    "timestamp": "2025-08-17 20:17:33",
+    "model": "YOLO v8",
+    "confidence": 0.5650845170021057
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:17:33",
+    "model": "YOLO v8",
+    "confidence": 0.40115058422088623
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-17 20:17:33",
+    "model": "YOLO v8",
+    "confidence": 0.3404378592967987
+  },
+  {
+    "type": "P-103b",
+    "timestamp": "2025-08-17 20:17:33",
+    "model": "YOLO v8",
+    "confidence": 0.2638396620750427
+  },
+  {
+    "type": "W-245a",
+    "timestamp": "2025-08-17 20:18:26",
+    "model": "Keras CNN",
+    "confidence": 0.633799135684967
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-17 20:18:44",
+    "model": "YOLO v8",
+    "confidence": 0.6037141680717468
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-17 20:18:44",
+    "model": "YOLO v8",
+    "confidence": 0.5876779556274414
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-17 20:19:11",
+    "model": "YOLO v8",
+    "confidence": 0.4308167099952698
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:22:51",
+    "model": "YOLO v8",
+    "confidence": 0.9420101642608643
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:22:58",
+    "model": "YOLO v8",
+    "confidence": 0.9405688643455505
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:22:58",
+    "model": "YOLO v8",
+    "confidence": 0.8676438331604004
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 20:22:58",
+    "model": "YOLO v8",
+    "confidence": 0.7299150228500366
+  },
+  {
+    "type": "P-102",
+    "timestamp": "2025-08-17 20:22:58",
+    "model": "YOLO v8",
+    "confidence": 0.5650845170021057
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:22:58",
+    "model": "YOLO v8",
+    "confidence": 0.40115058422088623
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-17 20:22:58",
+    "model": "YOLO v8",
+    "confidence": 0.3404378592967987
+  },
+  {
+    "type": "P-103b",
+    "timestamp": "2025-08-17 20:22:58",
+    "model": "YOLO v8",
+    "confidence": 0.2638396620750427
+  },
+  {
+    "type": "P-106b",
+    "timestamp": "2025-08-17 20:23:13",
+    "model": "YOLO v8",
+    "confidence": 0.9630061388015747
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:32:02",
+    "model": "YOLO v8",
+    "confidence": 0.9405688643455505
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:32:02",
+    "model": "YOLO v8",
+    "confidence": 0.8676438331604004
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 20:32:02",
+    "model": "YOLO v8",
+    "confidence": 0.7299150228500366
+  },
+  {
+    "type": "P-102",
+    "timestamp": "2025-08-17 20:32:02",
+    "model": "YOLO v8",
+    "confidence": 0.5650845170021057
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:32:02",
+    "model": "YOLO v8",
+    "confidence": 0.40115058422088623
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-17 20:32:02",
+    "model": "YOLO v8",
+    "confidence": 0.3404378592967987
+  },
+  {
+    "type": "P-103b",
+    "timestamp": "2025-08-17 20:32:02",
+    "model": "YOLO v8",
+    "confidence": 0.2638396620750427
+  },
+  {
+    "type": "P-130",
+    "timestamp": "2025-08-17 20:35:47",
+    "model": "Unknown",
+    "confidence": 0.4937659204006195
+  },
+  {
+    "type": "P-127",
+    "timestamp": "2025-08-17 20:35:47",
+    "model": "Unknown",
+    "confidence": 0.40616506338119507
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 20:36:59",
+    "model": "YOLO v8",
+    "confidence": 0.9420101642608643
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 21:03:33",
+    "model": "YOLO v8",
+    "confidence": 0.9400657415390015
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 21:03:33",
+    "model": "YOLO v8",
+    "confidence": 0.8572825193405151
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-17 21:03:33",
+    "model": "YOLO v8",
+    "confidence": 0.8028055429458618
+  },
+  {
+    "type": "P-102",
+    "timestamp": "2025-08-17 21:03:33",
+    "model": "YOLO v8",
+    "confidence": 0.5832602977752686
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-17 21:03:33",
+    "model": "YOLO v8",
+    "confidence": 0.3613940179347992
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 21:03:33",
+    "model": "YOLO v8",
+    "confidence": 0.35633817315101624
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 21:29:35",
+    "model": "Faster R-CNN",
+    "confidence": 0.9967203736305237
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 21:30:06",
+    "model": "YOLO v8",
+    "confidence": 0.6255182027816772
+  },
+  {
+    "type": "P-115",
+    "timestamp": "2025-08-17 21:30:06",
+    "model": "YOLO v8",
+    "confidence": 0.3553471267223358
+  },
+  {
+    "type": "P-127",
+    "timestamp": "2025-08-17 21:30:15",
+    "model": "Faster R-CNN",
+    "confidence": 0.8290247321128845
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 21:30:15",
+    "model": "Faster R-CNN",
+    "confidence": 0.692116916179657
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-17 21:30:15",
+    "model": "Faster R-CNN",
+    "confidence": 0.6030676364898682
+  },
+  {
+    "type": "P-106b",
+    "timestamp": "2025-08-17 21:30:15",
+    "model": "Faster R-CNN",
+    "confidence": 0.5387217998504639
+  },
+  {
+    "type": "P-123a",
+    "timestamp": "2025-08-19 16:42:50",
+    "model": "Keras CNN",
+    "confidence": 0.9995021820068359
+  },
+  {
+    "type": "W-245a",
+    "timestamp": "2025-08-19 16:46:51",
+    "model": "Keras CNN",
+    "confidence": 0.633799135684967
+  },
+  {
+    "type": "P-102",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.9777964949607849
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.85105961561203
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.8284648060798645
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.8108410239219666
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.8096558451652527
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.7915191650390625
+  },
+  {
+    "type": "P-106b",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.7552081942558289
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.7446346282958984
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.7238515019416809
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.7069474458694458
+  },
+  {
+    "type": "P-127",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.6674945950508118
+  },
+  {
+    "type": "P-104",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.6619701385498047
+  },
+  {
+    "type": "P-106a",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.6534978151321411
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.5940694212913513
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.5831685066223145
+  },
+  {
+    "type": "P-103a",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.5695359110832214
+  },
+  {
+    "type": "P-106b",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.5582869052886963
+  },
+  {
+    "type": "P-117",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.5557795166969299
+  },
+  {
+    "type": "P-103b",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.5331474542617798
+  },
+  {
+    "type": "P-107a",
+    "timestamp": "2025-08-19 16:47:04",
+    "model": "Faster R-CNN",
+    "confidence": 0.5126376748085022
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-19 16:52:11",
+    "model": "YOLO v8",
+    "confidence": 0.6037141680717468
+  },
+  {
+    "type": "P-103c",
+    "timestamp": "2025-08-19 16:52:11",
+    "model": "YOLO v8",
+    "confidence": 0.5876779556274414
+  }
+]

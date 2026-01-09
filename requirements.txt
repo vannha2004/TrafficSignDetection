@@ -1,0 +1,10 @@
+opencv-python~=4.12.0.88
+PyYAML~=6.0.2
+torch~=2.8.0
+numpy~=2.2.6
+Flask~=3.1.1
+ultralytics~=8.3.179
+keras~=3.11.2
+matplotlib~=3.10.5
+mmdet~=3.3.0
+mmcv~=2.1.0

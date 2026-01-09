@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Traffic Sign Detection{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="z-50 relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="{{ url_for('index') }}" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-traffic-light text-white"></i>
+                    </div>
+                    <span class="logo-text">TrafficSign AI</span>
+                </a>
+
+                <div class="desktop-nav hidden md:flex items-center space-x-1">
+                    <a href="{{ url_for('realtime') }}"
+                        class="nav-link {% if request.path == '/realtime' %}active{% endif %}">
+                        <i class="fas fa-video mr-2"></i> Realtime
+                    </a>
+                    <a href="{{ url_for('image_upload') }}"
+                        class="nav-link {% if request.path == '/image_upload' %}active{% endif %}">
+                        <i class="fas fa-upload mr-2"></i> Image Upload
+                    </a>
+                    <a href="{{ url_for('history') }}"
+                        class="nav-link {% if request.path == '/history' %}active{% endif %}">
+                        <i class="fas fa-history mr-2"></i> History
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn md:hidden" id="mobileMenuBtn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="{{ url_for('realtime') }}" class="nav-link {% if request.path == '/realtime' %}active{% endif %}">
+            <i class="fas fa-video mr-2"></i> Realtime
+        </a>
+        <a href="{{ url_for('image_upload') }}"
+            class="nav-link {% if request.path == '/image_upload' %}active{% endif %}">
+            <i class="fas fa-upload mr-2"></i> Image Upload
+        </a>
+        <a href="{{ url_for('history') }}" class="nav-link {% if request.path == '/history' %}active{% endif %}">
+            <i class="fas fa-history mr-2"></i> History
+        </a>
+    </div>
+
+    <!-- Content Container -->
+    <div class="container mx-auto px-4 py-10 text-white">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; GROUP 07 - Tuan Minh, Van Nha, Hoang Tung - HaUI 18th August 2025
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Random size between 5px and 20px
+                const size = Math.random() * 15 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.bottom = `-${size}px`;
+
+                // Random animation duration
+                const duration = Math.random() * 10 + 10;
+                particle.style.animationDuration = `${duration}s`;
+
+                // Random delay
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `${delay}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Navbar scroll effect
+        function handleNavScroll() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Mobile menu toggle
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMenuBtn = document.getElementById('closeMenu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('open');
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            setupMobileMenu();
+            window.addEventListener('scroll', handleNavScroll);
+            handleNavScroll();
+        });
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>
